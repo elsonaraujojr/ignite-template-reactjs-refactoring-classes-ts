@@ -1,11 +1,11 @@
-import { Routes as R, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "../pages/Dashboard";
 
-const Routes = () => (
-  <R>
+const Routs = () => (
+  <Routes>
     <Route path="/" element={<Dashboard />} />
-  </R>
+  </Routes>
 );
 
-export default Routes;
+export default Routs;

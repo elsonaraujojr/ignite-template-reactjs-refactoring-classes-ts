@@ -3,19 +3,20 @@ import { FiEdit3, FiTrash } from "react-icons/fi";
 import { api } from "../../services/api";
 import { Container } from "./styles";
 
-interface IFoodPlate {
-  id?: number;
+interface IFood {
+  id: number;
   name?: string;
   description?: string;
   price?: number;
   available?: boolean;
   image?: string;
+  createdAt?: string;
 }
 
 interface FootProps {
-  food: IFoodPlate;
-  handleEditFood: (food: IFoodPlate) => void;
-  handleDelete: (id: number | undefined) => void;
+  food: IFood;
+  handleEditFood: (food: IFood) => void;
+  handleDelete: (id: number) => void;
 }
 
 export default function Food({
@@ -30,6 +31,7 @@ export default function Food({
     await api.put(`/foods/${food.id}`, {
       ...food,
       available: !isAvailable,
+      createdAt: new Date()
     });
 
     setIsAvailable(!isAvailable);

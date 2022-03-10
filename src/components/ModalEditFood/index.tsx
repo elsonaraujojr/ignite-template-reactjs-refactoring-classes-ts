@@ -12,6 +12,7 @@ interface IFoodUp {
   price?: number;
   available?: boolean;
   image?: string;
+  createdAt?: string;
 }
 
 interface ModalEditFoodProps {
